@@ -21,7 +21,7 @@ This work was done in the following environment:
 
 # why?
 
-Maybe you don't want to use `ansible-builder` on philosphical or emotional grounds. Or maybe you maintain numerous image types, and like me, it bugs you the canon method requires you use a differnet method for building/maintaining Ansible EEs.
+Maybe you don't want to use `ansible-builder` on philosphical or emotional grounds. Or maybe you maintain numerous image types, and like me, it bugs you the canon method requires you use a different method for building/maintaining Ansible EEs.
 
 # referencing current RH published EE image
 
@@ -43,7 +43,7 @@ Inspect that image to see how it was built using the following command.
 podman image inspect quay.io/ansible/awx-ee
 ```
 
-I won't past the entire output here for brevity. Study the output a bit and see how it was built. There are some obvious things you can skip.
+I won't paste the entire output here for brevity. Study the output a bit and see how it was built. There are some obvious things you can skip.
 
 As far as what to pay attention to, some of the output spans multiple lines and is subject to change in the future, but here are the keys that I found to be relevant:
 
@@ -80,7 +80,8 @@ Note: in earlier versions of the RH EE image named `ansible-runner` the entrypoi
 
 The second one is actually a binary file and so the simplest way to extract them both is to launch an instance of the RH "official" image and run `podman cp` against that container instance and those files, as shown below:
 
-Note: Be sure to do this in the build diretory you are using to keep your files nice and sorted
+Note: Be sure to do this in the build directory you are using to keep your files nice and sorted
+
 Note: the full-path to the script `dumb-init` is not listed (sadly) but you can always enter the container and search for it if needed. The full path is revealed below.
 
 ```
